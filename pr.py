@@ -203,22 +203,6 @@ plt.axis('off')
 plt.savefig('morphology.png', bbox_inches='tight')
 plt.close()
 
-#ndvi_grad = cv2.Sobel(ndvi_n, cv2.CV_64F, 1, 0, ksize=3)
-#ndvi_grad = cv2.convertScaleAbs(ndvi_grad)
-#vv_grad = cv2.Sobel(vvvh_n, cv2.CV_64F, 1, 0, ksize=3)
-#vv_grad = cv2.convertScaleAbs(vv_grad)
-
-#combined_grad = cv2.max(ndvi_grad, vv_grad)
-
-#_, edges = cv2.threshold(combined_grad, 60, 255, cv2.THRESH_BINARY)
-
-# Где есть резкий перепад поле должно разделиться
-#field_mask = cv2.subtract(field_mask, edges)
-#field_mask = np.clip(field_mask, 0, 255).astype(np.uint8)
-
-# очистка после вычитания
-#field_mask = cv2.morphologyEx(field_mask, cv2.MORPH_CLOSE, kernel, iterations=1)
-
 # -------------------------------
 # векторизация
 # -------------------------------
@@ -337,5 +321,6 @@ plt.savefig('ndvi.png', bbox_inches='tight')
 plt.close()
 
 print('Изображения сохранены')
+
 
 
